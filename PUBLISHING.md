@@ -2,13 +2,15 @@
 
 ## First-time PyPI setup (one-time, ~2 minutes)
 
-1. Go to https://pypi.org/manage/account/publishing/ and add a "Pending Publisher":
-   - PyPI Project Name: `adk-database-memory`
-   - Owner: `anmolg1997`
-   - Repository name: `adk-database-memory`
-   - Workflow name: `release.yml`
-   - Environment name: `pypi`
-2. In GitHub, create an environment named `pypi` for the repo (Settings > Environments > New). No secrets needed; trusted publishing uses OIDC.
+Go to https://pypi.org/manage/account/publishing/ and add a **Pending Publisher** (under "Add a pending publisher") with exactly these 4 fields:
+
+- PyPI Project Name: `adk-database-memory`
+- Owner: `anmolg1997`
+- Repository name: `adk-database-memory`
+- Workflow name: `release.yml`
+- Environment name: *(leave blank)*
+
+No GitHub-side configuration is needed - trusted publishing uses OIDC automatically when the workflow has `permissions: id-token: write`.
 
 ## Cut a release
 
