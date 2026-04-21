@@ -7,6 +7,7 @@ Drop-in durable replacement for `InMemoryMemoryService`. Works with any async SQ
 [![PyPI](https://img.shields.io/pypi/v/adk-database-memory.svg?cacheSeconds=300)](https://pypi.org/project/adk-database-memory/)
 [![Python](https://img.shields.io/pypi/pyversions/adk-database-memory.svg?cacheSeconds=300)](https://pypi.org/project/adk-database-memory/)
 [![CI](https://github.com/anmolg1997/adk-database-memory/actions/workflows/ci.yml/badge.svg)](https://github.com/anmolg1997/adk-database-memory/actions/workflows/ci.yml)
+[![Downloads](https://img.shields.io/pypi/dm/adk-database-memory.svg?cacheSeconds=300)](https://pypi.org/project/adk-database-memory/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 
 ## Why
