@@ -28,7 +28,7 @@ from sqlalchemy.dialects import mysql, postgresql
 from sqlalchemy.types import TypeDecorator
 
 
-class DynamicJSON(TypeDecorator):  # type: ignore[type-arg]
+class DynamicJSON(TypeDecorator):
     """JSON column that uses JSONB on Postgres, LONGTEXT on MySQL, TEXT elsewhere."""
 
     impl = Text
@@ -36,10 +36,10 @@ class DynamicJSON(TypeDecorator):  # type: ignore[type-arg]
 
     def load_dialect_impl(self, dialect: Dialect) -> Any:
         if dialect.name == "postgresql":
-            return dialect.type_descriptor(postgresql.JSONB)
+            return dialect.type_descriptor(postgresql.JSONB())
         if dialect.name == "mysql":
-            return dialect.type_descriptor(mysql.LONGTEXT)
-        return dialect.type_descriptor(Text)
+            return dialect.type_descriptor(mysql.LONGTEXT())
+        return dialect.type_descriptor(Text())
 
     def process_bind_param(self, value: Any, dialect: Dialect) -> Any:
         if value is None:

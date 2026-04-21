@@ -79,7 +79,7 @@ def _format_timestamp(timestamp: float) -> str:
     return datetime.fromtimestamp(timestamp).isoformat()
 
 
-class DatabaseMemoryService(BaseMemoryService):  # type: ignore[misc]
+class DatabaseMemoryService(BaseMemoryService):
     """Memory service backed by any SQLAlchemy-compatible async database.
 
     Uses keyword extraction to index session events, and keyword overlap to

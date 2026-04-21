@@ -27,7 +27,7 @@ from ._types import DynamicJSON
 _MAX_KEY_LENGTH = 128
 
 
-class Base(DeclarativeBase):  # type: ignore[misc]
+class Base(DeclarativeBase):
     """Base class for memory database tables."""
 
 
