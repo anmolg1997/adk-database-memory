@@ -9,7 +9,7 @@ description = "SQL-backed memory service for the Google Agent Development Kit (A
 readme = "README.md"
 requires-python = ">=3.10"
 license = { file = "LICENSE" }
-authors = [{ name = "Anmol Jaiswal", email = "anmolgupta71197@gmail.com" }]
+authors = [{ name = "Anmol Jaiswal", email = "the.anmol.jaiswal@gmail.com" }]
 keywords = ["adk", "agent-development-kit", "memory", "sqlalchemy", "agents", "llm"]
 classifiers = [
   "Development Status :: 4 - Beta",
