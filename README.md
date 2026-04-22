@@ -27,6 +27,14 @@ pip install adk-database-memory[mysql]        # MySQL / MariaDB (via aiomysql)
 
 The base install does not pull any database driver. Pick the extra that matches your backend, or install your own async SQLAlchemy driver separately.
 
+## Examples
+
+Three runnable scripts in [`examples/`](./examples/):
+
+- `quickstart_sqlite.py` - smallest end-to-end usage
+- `with_runner.py` - plug into an ADK `Runner` with the `load_memory` tool
+- `multi_user_search.py` - per-user isolation demo
+
 ## Quick start
 
 ```python
