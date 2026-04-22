@@ -4,15 +4,18 @@ SQL-backed memory service for the [Google Agent Development Kit (ADK)](https://g
 
 Drop-in durable replacement for `InMemoryMemoryService`. Works with any async SQLAlchemy dialect: SQLite, PostgreSQL, MySQL/MariaDB, and more.
 
+Listed in the [official ADK integrations catalog](https://google.github.io/adk-docs/integrations/database-memory/).
+
 [![PyPI](https://img.shields.io/pypi/v/adk-database-memory.svg?cacheSeconds=300)](https://pypi.org/project/adk-database-memory/)
 [![Python](https://img.shields.io/pypi/pyversions/adk-database-memory.svg?cacheSeconds=300)](https://pypi.org/project/adk-database-memory/)
 [![CI](https://github.com/anmolg1997/adk-database-memory/actions/workflows/ci.yml/badge.svg)](https://github.com/anmolg1997/adk-database-memory/actions/workflows/ci.yml)
 [![Downloads](https://img.shields.io/pypi/dm/adk-database-memory.svg?cacheSeconds=300)](https://pypi.org/project/adk-database-memory/)
+[![ADK Docs](https://img.shields.io/badge/ADK_Docs-Listed-4285F4?logo=google&logoColor=white)](https://google.github.io/adk-docs/integrations/database-memory/)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](./LICENSE)
 
 ## Why
 
-ADK ships an in-memory memory service for development and a Vertex-hosted one for production on GCP. If you want durable memory on your own Postgres/SQLite/MySQL, there was no built-in option. This package fills that gap with the same `BaseMemoryService` contract, so you can swap it in without changing agent code.
+ADK ships an in-memory memory service for development and Vertex AI Memory Bank for production on GCP. If you want durable memory on your own Postgres / SQLite / MySQL, there was no built-in option. This package fills that gap with the same `BaseMemoryService` contract, so you can swap it in without changing agent code.
 
 ## Install
 
@@ -132,5 +135,7 @@ Apache 2.0 - see [LICENSE](./LICENSE).
 
 ## Related
 
+- [Official ADK docs listing](https://google.github.io/adk-docs/integrations/database-memory/) - integration page on `google.github.io/adk-docs`.
 - [google/adk-python](https://github.com/google/adk-python) - core Agent Development Kit.
+- [ADK Memory overview](https://google.github.io/adk-docs/sessions/memory/) - background on how ADK uses memory services.
 - [`FirestoreSessionService` (PR #5088)](https://github.com/google/adk-python/pull/5088) - the sibling Firestore session service this memory service's keyword-index approach mirrors.
