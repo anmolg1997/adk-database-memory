@@ -1,0 +1,38 @@
+name: Feature request
+description: Propose a new feature or enhancement.
+title: "feat: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem are you trying to solve?
+      placeholder: "I want to ..."
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe your proposed API/behavior.
+      placeholder: "Proposed API:\n\n```python\n...\n```"
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: What alternatives did you consider?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This proposal keeps compatibility with ADK's BaseMemoryService contract.
+          required: true

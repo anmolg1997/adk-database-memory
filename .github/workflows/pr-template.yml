@@ -1,0 +1,42 @@
+name: PR Template Check
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+jobs:
+  validate-pr-template:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate required PR sections
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          python - <<'PY'
+          import os
+          import re
+          import sys
+
+          body = os.getenv("PR_BODY") or ""
+          required_headers = ["## Summary", "## Why", "## Test plan", "## Checklist"]
+          missing = [h for h in required_headers if h not in body]
+
+          if missing:
+            print("Missing required section headers in PR body:")
+            for h in missing:
+              print(f"  - {h}")
+            sys.exit(1)
+
+          # Require at least one checked box in Test plan.
+          test_plan_block = re.search(r"## Test plan(.*?)## Checklist", body, flags=re.S)
+          if not test_plan_block:
+            print("Could not parse Test plan section.")
+            sys.exit(1)
+
+          checked_items = re.findall(r"- \[x\] ", test_plan_block.group(1), flags=re.I)
+          if not checked_items:
+            print("Please check at least one Test plan item (- [x]).")
+            sys.exit(1)
+
+          print("PR template validation passed.")
+          PY

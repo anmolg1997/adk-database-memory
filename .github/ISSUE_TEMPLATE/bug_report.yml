@@ -1,0 +1,59 @@
+name: Bug report
+description: Report a reproducible bug in adk-database-memory.
+title: "bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. Please provide a minimal reproducible example so we can debug quickly.
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: Describe the bug and expected behavior.
+      placeholder: "Observed: ...\nExpected: ..."
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: Paste the smallest code snippet that reproduces the issue.
+      placeholder: |
+        from adk_database_memory import DatabaseMemoryService
+        # ...
+    validations:
+      required: true
+  - type: textarea
+    id: env
+    attributes:
+      label: Environment
+      description: Include versions and database backend details.
+      placeholder: |
+        - adk-database-memory: 0.1.0
+        - google-adk:
+        - sqlalchemy:
+        - database backend:
+        - python:
+        - os:
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Stack trace or logs
+      description: Paste relevant error output.
+      render: shell
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checklist
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: I can reproduce this on the latest released version.
+          required: true
