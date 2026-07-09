@@ -6,6 +6,9 @@ on:
 
 jobs:
   validate-pr-template:
+    # Bot PRs (Dependabot etc.) don't fill in the template; skipped checks
+    # still satisfy branch protection.
+    if: ${{ !endsWith(github.event.pull_request.user.login, '[bot]') }}
     runs-on: ubuntu-latest
     steps:
       - name: Validate required PR sections
